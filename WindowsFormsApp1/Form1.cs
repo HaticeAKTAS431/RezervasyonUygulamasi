@@ -34,7 +34,27 @@ namespace WindowsFormsApp1
             dateTimePicker2.Text = donusTarihi.ToString();
         } 
         
-        private void button1_Click(object sender, EventArgs e)
+     
+    }
+
+    public class PanelGnerator
+    {
+        private ReservationFactory _reservationFactory;
+        private Transportation _transportation;
+        private Accomodation _accomodation;
+        private Departure _departure;
+        private Arrival _arrival;
+
+        public WindowsFormsApp1(ReservationFactory reservationFactory)
+        {
+            _reservationFactory = reservationFactory;
+            _transportation = transportation();
+            _accomodation = accomodation();
+            _departure = departure();
+            _arrival = arrival();
+        }
+
+           private void button1_Click(object sender, EventArgs e)
         {
             this.Visible = false;
 
@@ -43,5 +63,6 @@ namespace WindowsFormsApp1
             form2.ShowDialog();
            
         }
+
     }
 }
